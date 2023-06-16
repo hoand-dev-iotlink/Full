@@ -54,11 +54,6 @@ namespace FullMin
             // Hiển thị hình tròn lên OpenGLControl
             glControl_test.SwapBuffers();
         }
-
-        private void glControl_test_Load(object sender, EventArgs e)
-        {
-
-        }
         private void glControl_test_Resize(object sender, EventArgs e)
         {
             int w = glControl_test.Width;
@@ -115,7 +110,7 @@ namespace FullMin
 
             //GL.Color3(Color.White);
             GL.Begin(BeginMode.TriangleFan);
-            GL.Color3(ColorFromHSV(hue, 1, 1)); // Sử dụng màu từ giá trị HSV
+            GL.Color3(ColorFromHSV(hue, 1, 0.5f)); // Sử dụng màu từ giá trị HSV
 
             for (int i = 0; i < 360; i++)
             {

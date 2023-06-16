@@ -41,7 +41,6 @@ namespace FullMin
             this.glControl_test.Size = new System.Drawing.Size(856, 504);
             this.glControl_test.TabIndex = 0;
             this.glControl_test.VSync = false;
-            this.glControl_test.Load += new System.EventHandler(this.glControl_test_Load);
             this.glControl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_test_Paint);
             this.glControl_test.Resize += new System.EventHandler(this.glControl_test_Resize);
             // 
