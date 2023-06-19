@@ -4,6 +4,8 @@ using OpenTK;
 using OpenTK.Graphics;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
+using FullMin.Service;
 
 namespace FullMin
 {
@@ -17,6 +19,11 @@ namespace FullMin
         private bool isLightOn = false; // Trạng thái đèn LED
         private bool isDragging;
         private PointF lastMousePos;
+        private Bitmap bitmap;
+        private List<Light> lights;
+
+        private double transitionDuration = 2.0; // Thời gian chuyển đổi màu (tính bằng giây)
+        private double elapsedTime = 0.0; // Thời gian đã trôi qua
         public TestZoom()
         {
             InitializeComponent();
@@ -43,11 +50,19 @@ namespace FullMin
             GL.Scale(zoomFactor, zoomFactor, 1.0f); // Áp dụng tỷ lệ phóng
                                                     // Vẽ đối tượng OpenGL của bạn
             GL.Translate(offsetX, offsetY, 0);
-
-            drawCircle(5, 5, 5);
-            drawCircle(5, 5, 20);
-            drawCircle(5, 5, 35);
-            
+            int x = 5, y = 5;
+            for (int i = 0; i < 30; i++)
+            {
+                
+                y = 5;
+                for (int j = 0; j < 10; j++)
+                {
+                    drawCircle(5, x, y);
+                    //lights.Add(new Light(x, y,));
+                    y = ((j + 1) * 15)+5;
+                }
+                x = ((i + 1) * 15) + 5;
+            }
             glControl1.SwapBuffers();
         }
 
@@ -110,20 +125,9 @@ namespace FullMin
             //viewportSize = new SizeF(glControl1.Width, glControl1.Height);
             GL.Viewport(0, 0, glControl1.Width, glControl1.Height);
         }
-
         private void drawCircle(float radius, float x, float y)
         {
-            // Chọn hình ảnh hiện tại để vẽ
-            //Bitmap currentFrame = frames[currentFrameIndex];
-
-            //// Chuyển đổi hình ảnh BMP thành dữ liệu pixel dùng cho OpenGL texture
-            //BitmapData bitmapData = currentFrame.LockBits(new Rectangle(0, 0, currentFrame.Width, currentFrame.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            //GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bitmapData.Width, bitmapData.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bitmapData.Scan0);
-            //currentFrame.UnlockBits(bitmapData);
-
-            //GL.Color3(Color.White);
             GL.Begin(BeginMode.TriangleFan);
-            //GL.Color3(Color.Red); // Sử dụng màu từ giá trị HSV
             GL.Color3(isLightOn ? colors[currentColorIndex] : Color.Red);
 
             for (int i = 0; i < 360; i++)
@@ -177,6 +181,22 @@ namespace FullMin
                 return Color.FromArgb(255, t, p, v);
             else
                 return Color.FromArgb(255, v, p, q);
+        }
+
+        private void GetBitmap()
+        {
+            bitmap = new Bitmap("path_to_image.bmp");
+            lights = new List<Light>();
+
+            // Tạo danh sách đèn và đặt màu ban đầu cho mỗi đèn
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    lights.Add(new Light(x, y, pixelColor));
+                }
+            }
         }
     }
 }
