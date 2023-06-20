@@ -27,6 +27,7 @@ namespace FullMin
         public TestZoom()
         {
             InitializeComponent();
+            GetBitmap();
             glControl1.MouseWheel += glControl1_MouseWheel;
             glControl1.MouseMove += glControl1_MouseMove;
             timer1 = new Timer();
@@ -50,19 +51,27 @@ namespace FullMin
             GL.Scale(zoomFactor, zoomFactor, 1.0f); // Áp dụng tỷ lệ phóng
                                                     // Vẽ đối tượng OpenGL của bạn
             GL.Translate(offsetX, offsetY, 0);
+            //vẽ lead test
             int x = 5, y = 5;
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 100; i++)
             {
-                
+
                 y = 5;
                 for (int j = 0; j < 10; j++)
                 {
                     drawCircle(5, x, y);
                     //lights.Add(new Light(x, y,));
-                    y = ((j + 1) * 15)+5;
+                    y = ((j + 1) * 15) + 5;
                 }
                 x = ((i + 1) * 15) + 5;
             }
+            //vẽ lead with image
+            //for(int i=0;i<1000;i++)
+            //{
+            //    Color currentColor = lights[i].GetColor(elapsedTime, transitionDuration);
+            //    lights[i].Draw(currentColor);
+            //}
+
             glControl1.SwapBuffers();
         }
 
@@ -129,7 +138,10 @@ namespace FullMin
         {
             GL.Begin(BeginMode.TriangleFan);
             GL.Color3(isLightOn ? colors[currentColorIndex] : Color.Red);
-
+            float x1 = x >= bitmap.Width ? (x - bitmap.Width) : x;
+            var pixelColor = bitmap.GetPixel((int)x1, (int)y);
+            //var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, 255);
+            GL.Color3(pixelColor.R, pixelColor.G, pixelColor.B);
             for (int i = 0; i < 360; i++)
             {
                 double degInRad = i * 3.1416 / 180;
@@ -185,7 +197,7 @@ namespace FullMin
 
         private void GetBitmap()
         {
-            bitmap = new Bitmap("path_to_image.bmp");
+            bitmap = new Bitmap(@"..\..\image\path_to_image.bmp");
             lights = new List<Light>();
 
             // Tạo danh sách đèn và đặt màu ban đầu cho mỗi đèn

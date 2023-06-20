@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="image\2_.bmp" />
+    <Content Include="image\path_to_image.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
