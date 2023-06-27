@@ -16,7 +16,7 @@ namespace FullMin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestZoom());
+            Application.Run(new MainFormNew());
         }
     }
 }

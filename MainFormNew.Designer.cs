@@ -1,7 +1,7 @@
 ﻿
 namespace FullMin
 {
-    partial class TestZoom
+    partial class MainFormNew
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@ namespace FullMin
             this.components = new System.ComponentModel.Container();
             this.glControl1 = new OpenTK.GLControl();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
@@ -42,15 +41,12 @@ namespace FullMin
             this.glControl1.BackColor = System.Drawing.Color.Black;
             this.glControl1.Location = new System.Drawing.Point(73, 12);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(777, 476);
+            this.glControl1.Size = new System.Drawing.Size(1272, 702);
             this.glControl1.TabIndex = 0;
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
-            //this.glControl1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.glControl1_Scroll);
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
-            //this.glControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseDown);
             this.glControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseMove);
-            //this.glControl1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseUp);
             this.glControl1.Resize += new System.EventHandler(this.glControl1_Resize);
             // 
             // button1
@@ -61,11 +57,6 @@ namespace FullMin
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button2
             // 
@@ -75,7 +66,6 @@ namespace FullMin
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // imageList1
             // 
@@ -83,18 +73,16 @@ namespace FullMin
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // TestZoom
+            // MainFormNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 513);
+            this.ClientSize = new System.Drawing.Size(1357, 726);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.glControl1);
-            this.Name = "TestZoom";
+            this.Name = "MainFormNew";
             this.Text = "TestZoom";
-            //this.Load += new System.EventHandler(this.TestZoom_Load);
-            //this.Paint += new System.Windows.Forms.PaintEventHandler(this.TestZoom_Paint);
             this.ResumeLayout(false);
 
         }
@@ -103,7 +91,6 @@ namespace FullMin
 
         private OpenTK.GLControl glControl1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ImageList imageList1;
     }

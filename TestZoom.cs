@@ -30,19 +30,19 @@ namespace FullMin
             GetBitmap();
             glControl1.MouseWheel += glControl1_MouseWheel;
             glControl1.MouseMove += glControl1_MouseMove;
-            timer1 = new Timer();
-            timer1.Interval = 1000; // Thời gian thay đổi màu (ms)
-            timer1.Tick += timer1_Tick;
+            //timer1 = new Timer();
+            //timer1.Interval = 1000; // Thời gian thay đổi màu (ms)
+            //timer1.Tick += timer1_Tick;
         }
 
-        private void TestZoom_Load(object sender, EventArgs e)
-        {
+        //private void TestZoom_Load(object sender, EventArgs e)
+        //{
 
-        }
-        private void TestZoom_Paint(object sender, PaintEventArgs e)
-        {
+        //}
+        //private void TestZoom_Paint(object sender, PaintEventArgs e)
+        //{
 
-        }
+        //}
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
@@ -50,7 +50,7 @@ namespace FullMin
             GL.LoadIdentity();
             GL.Scale(zoomFactor, zoomFactor, 1.0f); // Áp dụng tỷ lệ phóng
                                                     // Vẽ đối tượng OpenGL của bạn
-            GL.Translate(offsetX, offsetY, 0);
+            //GL.Translate(offsetX, offsetY, 0);
             //vẽ lead test
             int x = 5, y = 5;
             for (int i = 0; i < 100; i++)
@@ -90,7 +90,8 @@ namespace FullMin
             // Kéo chuột để di chuyển khung nhìn
             if (e.Button == MouseButtons.Left)
             {
-                PointF delta = new PointF(e.Location.X - lastMousePos.X, e.Location.Y - lastMousePos.Y);
+                //PointF delta = new PointF(e.Location.X - lastMousePos.X, e.Location.Y - lastMousePos.Y);
+                PointF delta = new PointF(e.Location.X , e.Location.Y );
                 offsetX += delta.X / zoomFactor; // Áp dụng di chuyển theo tỷ lệ phóng
                 offsetY += delta.Y / zoomFactor; // Áp dụng di chuyển theo tỷ lệ phóng
                 lastMousePos = e.Location;
@@ -123,10 +124,10 @@ namespace FullMin
             }
         }
 
-        private void glControl1_Scroll(object sender, ScrollEventArgs e)
-        {
+        //private void glControl1_Scroll(object sender, ScrollEventArgs e)
+        //{
 
-        }
+        //}
 
         private void glControl1_Resize(object sender, EventArgs e)
         {
