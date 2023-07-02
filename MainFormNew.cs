@@ -128,6 +128,12 @@ namespace FullMin
             //viewportSize = new SizeF(glControl1.Width, glControl1.Height);
             GL.Viewport(0, 0, glControl1.Width, glControl1.Height);
         }
+
+        private void MainFormNew_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //private void drawCircle(float radius, float x, float y)
         //{
         //    GL.Begin(BeginMode.TriangleFan);

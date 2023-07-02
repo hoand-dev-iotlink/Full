@@ -42,7 +42,7 @@ namespace FullMin.Service
             {
 
                 y = 5;
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 1; j++)
                 {
                     //drawCircle(5, x, y);
                     PointColorModel pointColorModel = new PointColorModel() { point = new Point() { X = x, Y = y }, color = Color.Red };

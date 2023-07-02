@@ -83,6 +83,7 @@ namespace FullMin
             this.Controls.Add(this.glControl1);
             this.Name = "MainFormNew";
             this.Text = "TestZoom";
+            this.Load += new System.EventHandler(this.MainFormNew_Load);
             this.ResumeLayout(false);
 
         }
