@@ -65,10 +65,16 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\LedModel.cs" />
     <Compile Include="Model\PointColorModel.cs" />
+    <Compile Include="Model\ShapeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ColorPointService.cs" />
+    <Compile Include="Model\Shape.cs" />
+    <Compile Include="Service\DataStatic.cs" />
+    <Compile Include="Service\DrawShape.cs" />
+    <Compile Include="Service\IDrawShape.cs" />
     <Compile Include="Service\LedService.cs" />
     <Compile Include="Service\Light.cs" />
     <Compile Include="Service\log.cs" />

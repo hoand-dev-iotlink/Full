@@ -29,32 +29,38 @@ namespace FullMin
         /// </summary>
         private void InitializeComponent()
         {
-            this.glControl1 = new OpenTK.GLControl();
+            this.ptb_DrawLead = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_DrawLead)).BeginInit();
             this.SuspendLayout();
             // 
-            // glControl1
+            // ptb_DrawLead
             // 
-            this.glControl1.BackColor = System.Drawing.Color.Black;
-            this.glControl1.Location = new System.Drawing.Point(190, 94);
-            this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(375, 201);
-            this.glControl1.TabIndex = 0;
-            this.glControl1.VSync = false;
+            this.ptb_DrawLead.BackColor = System.Drawing.Color.Black;
+            this.ptb_DrawLead.Location = new System.Drawing.Point(1, 84);
+            this.ptb_DrawLead.Name = "ptb_DrawLead";
+            this.ptb_DrawLead.Size = new System.Drawing.Size(1353, 647);
+            this.ptb_DrawLead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptb_DrawLead.TabIndex = 0;
+            this.ptb_DrawLead.TabStop = false;
+            this.ptb_DrawLead.Paint += new System.Windows.Forms.PaintEventHandler(this.ptb_DrawLead_Paint);
+            this.ptb_DrawLead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ptb_DrawLead_MouseDown);
+            this.ptb_DrawLead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptb_DrawLead_MouseMove);
             // 
             // FormHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.glControl1);
+            this.ClientSize = new System.Drawing.Size(1358, 733);
+            this.Controls.Add(this.ptb_DrawLead);
             this.Name = "FormHoa";
             this.Text = "FormHoa";
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_DrawLead)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private OpenTK.GLControl glControl1;
+        private System.Windows.Forms.PictureBox ptb_DrawLead;
     }
 }

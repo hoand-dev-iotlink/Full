@@ -207,7 +207,7 @@ namespace FullMin
             //    g.FillEllipse(Brushes.Red, circleRect);
             //}
             //g.Dispose();
-            panel2.Invalidate();
+            //panel2.Invalidate();
         }
 
         private void UpdateBitMap(int x, int y)

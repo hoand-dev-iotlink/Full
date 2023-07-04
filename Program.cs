@@ -16,7 +16,7 @@ namespace FullMin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DrawMain());
+            Application.Run(new FormHoa());
         }
     }
 }
