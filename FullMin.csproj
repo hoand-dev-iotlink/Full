@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="f_in_box__lib, Version=4.4.0.0, Culture=neutral, PublicKeyToken=55fbbf822305a8d1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\f_in_box__lib.dll</HintPath>
+    </Reference>
     <Reference Include="OpenTK, Version=3.3.3.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>packages\OpenTK.3.3.3\lib\net20\OpenTK.dll</HintPath>
     </Reference>
@@ -66,6 +70,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\LedModel.cs" />
+    <Compile Include="Model\MenuModel.cs" />
     <Compile Include="Model\PointColorModel.cs" />
     <Compile Include="Model\ShapeModel.cs" />
     <Compile Include="Program.cs" />
@@ -75,6 +80,7 @@
     <Compile Include="Service\DataStatic.cs" />
     <Compile Include="Service\DrawShape.cs" />
     <Compile Include="Service\IDrawShape.cs" />
+    <Compile Include="Service\select\IRetangleSelectService.cs" />
     <Compile Include="Service\LedService.cs" />
     <Compile Include="Service\Light.cs" />
     <Compile Include="Service\log.cs" />
@@ -83,6 +89,10 @@
     </Compile>
     <Compile Include="DrawMain.Designer.cs">
       <DependentUpon>DrawMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\select\RetangleSelectService.cs" />
+    <Compile Include="Service\RJButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>

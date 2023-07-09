@@ -28,7 +28,8 @@ namespace FullMin.Service
         protected virtual GraphicsPath graphicsPath()
         {
             GraphicsPath path = new GraphicsPath();
-            RectangleF circleRectPr = new RectangleF(pointStart.X, pointStart.Y, 5 * 2, 5 * 2);
+            if (distance.X != 0 || distance.Y != 0) pointStart = new PointF(pointStart.X + distance.X, pointStart.Y + distance.Y);
+            RectangleF circleRectPr = new RectangleF(pointStart.X, pointStart.Y, 3 * 2, 3 * 2);
             path.AddEllipse(circleRectPr);
             return path;
         }

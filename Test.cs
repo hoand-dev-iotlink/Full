@@ -309,7 +309,7 @@ namespace FullMin
                 // Lấy màu từ pixel tương ứng trên hình bitmap
                 Color pixelColor = bitmap.GetPixel(x, y);
                 string hexValue = ColorTranslator.ToHtml(pixelColor);
-                log.Log(string.Format("x={0},y={1},color={2}", x, y, hexValue));
+                //log.Log(string.Format("x={0},y={1},color={2}", x, y, hexValue));
 
                 // Cập nhật màu cho đèn LED
                 ledColors[i] = pixelColor;

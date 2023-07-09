@@ -134,6 +134,12 @@ namespace FullMin
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormHoa formHoa = new FormHoa();
+            formHoa.Show();
+        }
+
         //private void drawCircle(float radius, float x, float y)
         //{
         //    GL.Begin(BeginMode.TriangleFan);
