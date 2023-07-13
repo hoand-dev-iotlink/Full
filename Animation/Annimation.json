@@ -1,0 +1,56 @@
+﻿{
+  "AnimationBackground": [
+    {
+      "Name": "Hiệu ứng 1",
+      "Image": "2_.bmp"
+    },
+    {
+      "Name": "Hiệu ứng 2",
+      "Image": "2_.bmp"
+    }
+  ],
+  "AnimationBorder": [
+    {
+      "Name": "Hiệu ứng 1",
+      "Image": "00000.bmp"
+    },
+    {
+      "Name": "Hiệu ứng 2",
+      "Image": "00000.bmp"
+    }
+  ],
+  "AnimationImage": [
+    {
+      "Name": "Hiệu ứng 1",
+      "Image": "2022.png"
+    },
+    {
+      "Name": "Hiệu ứng 2",
+      "Image": "00000.bmp"
+    },
+    {
+      "Name": "Hiệu ứng 3",
+      "Image": "00000.bmp"
+    }
+  ],
+  "AnimationText": [
+    {
+      "Name": "Hiệu ứng 1",
+      "Image": "2022.png"
+    },
+    {
+      "Name": "Hiệu ứng 2",
+      "Image": "00000.bmp"
+    }
+  ],
+  "AnimationActive": [
+    {
+      "Name": "Hiệu ứng 1",
+      "Image": "00000.bmp"
+    },
+    {
+      "Name": "Hiệu ứng 2",
+      "Image": "00000.bmp"
+    }
+  ]
+}

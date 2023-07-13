@@ -38,6 +38,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\f_in_box__lib.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="OpenTK, Version=3.3.3.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>packages\OpenTK.3.3.3\lib\net20\OpenTK.dll</HintPath>
     </Reference>
@@ -69,9 +72,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConfigAnimationModel.cs" />
     <Compile Include="Model\LedModel.cs" />
     <Compile Include="Model\MenuModel.cs" />
     <Compile Include="Model\PointColorModel.cs" />
+    <Compile Include="Model\SelectItem.cs" />
     <Compile Include="Model\ShapeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +85,8 @@
     <Compile Include="Service\DataStatic.cs" />
     <Compile Include="Service\DrawShape.cs" />
     <Compile Include="Service\IDrawShape.cs" />
+    <Compile Include="Service\objectAnimation\IObjectAnimationService.cs" />
+    <Compile Include="Service\objectAnimation\ObjectAnimationService.cs" />
     <Compile Include="Service\select\IRetangleSelectService.cs" />
     <Compile Include="Service\LedService.cs" />
     <Compile Include="Service\Light.cs" />
@@ -156,9 +163,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Animation\Annimation.json" />
     <Content Include="image\2_.bmp" />
     <Content Include="image\path_to_image.bmp" />
     <Content Include="Service\log.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animation\AnimationBackground\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

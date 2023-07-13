@@ -273,6 +273,12 @@ namespace FullMin
             Close();
         }
 
+        private void FormHoa_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(rjBt_home, "Hello");
+        }
+
         public void UpdateCurveSelected()
         {
             var listShape = DataStatic.listShape.FindAll(x => x.isSelect);

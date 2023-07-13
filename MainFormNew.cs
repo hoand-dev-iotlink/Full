@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Collections.Generic;
 using FullMin.Service;
 using FullMin.Model;
+using FullMin.Service.objectAnimation;
+using Newtonsoft.Json;
 
 namespace FullMin
 {
@@ -21,23 +23,24 @@ namespace FullMin
 
         private readonly LedService ledService;
         private readonly ColorPointService colorPointService;
-        //private double transitionDuration = 2.0; // Thời gian chuyển đổi màu (tính bằng giây)
-        //private double elapsedTime = 0.0; // Thời gian đã trôi qua
+        private readonly ObjectAnimationService objectAnimationService;
         public MainFormNew()
         {
             InitializeComponent();
             ledService = new LedService();
             colorPointService = new ColorPointService();
-            //GetBitmap();
+            objectAnimationService = new ObjectAnimationService();
             glControl1.MouseWheel += glControl1_MouseWheel;
             glControl1.MouseMove += glControl1_MouseMove;
             glControl1.MouseDown += glControl1_MouseDown;
             bitmap = colorPointService.GetBitmap("path_to_image.bmp");
 
-            timer1 = new Timer();
-            timer1.Interval = 5; // Thời gian thay đổi màu (ms)
-            timer1.Tick += timer1_Tick;
-            timer1.Start();
+            //timer1 = new Timer();
+            //timer1.Interval = 5; // Thời gian thay đổi màu (ms)
+            //timer1.Tick += timer1_Tick;
+            //timer1.Start();
+
+            AddListAnimation();
         }
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
@@ -46,21 +49,7 @@ namespace FullMin
             GL.Scale(zoomFactor, zoomFactor, 1.0f); // Áp dụng tỷ lệ phóng
                                                     // Vẽ đối tượng OpenGL của bạn
             GL.Translate(offsetX, offsetY, 0);
-            ////vẽ lead test
-            //int x = 5, y = 5;
-            //for (int i = 0; i < 100; i++)
-            //{
-
-            //    y = 5;
-            //    for (int j = 0; j < 10; j++)
-            //    {
-            //        //drawCircle(5, x, y);
-            //        PointColorModel pointColorModel = new PointColorModel() { point = new Point() { X = x, Y = y },color=Color.Red };
-            //        ledService.DrawLead(pointColorModel);
-            //        y = ((j + 1) * 15) + 5;
-            //    }
-            //    x = ((i + 1) * 15) + 5;
-            //}
+            
             pointColorModels = ledService.TestLead(100);
             
 
@@ -109,18 +98,7 @@ namespace FullMin
                 lastMousePos = e.Location;
             }
         }
-        //private void glControl1_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    if (e.Button == MouseButtons.Left)
-        //    {
-        //        isDragging = false;
-        //    }
-        //}
-
-        //private void glControl1_Scroll(object sender, ScrollEventArgs e)
-        //{
-
-        //}
+        
 
         private void glControl1_Resize(object sender, EventArgs e)
         {
@@ -139,28 +117,6 @@ namespace FullMin
             FormHoa formHoa = new FormHoa();
             formHoa.Show();
         }
-
-        //private void drawCircle(float radius, float x, float y)
-        //{
-        //    GL.Begin(BeginMode.TriangleFan);
-        //    GL.Color3(isLightOn ? colors[currentColorIndex] : Color.Red);
-        //    float x1 = x >= bitmap.Width ? (x - bitmap.Width) : x;
-        //    var pixelColor = bitmap.GetPixel((int)x1, (int)y);
-        //    //var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, 255);
-        //    GL.Color3(pixelColor.R, pixelColor.G, pixelColor.B);
-        //    for (int i = 0; i < 360; i++)
-        //    {
-        //        double degInRad = i * 3.1416 / 180;
-        //        GL.Vertex2(Math.Cos(degInRad) * radius + x, Math.Sin(degInRad) * radius + y);
-        //    }
-        //    GL.End();
-        //    GL.PopMatrix();
-        //}
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    timer1.Start();
-        //}
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -188,13 +144,26 @@ namespace FullMin
 
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    timer1.Stop();
-        //    isLightOn = false;
-        //    glControl1.Invalidate();
-        //}
+        private void cb_animation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            var selectedEmployee = ((SelectItem)cb_animation.SelectedItem);
+            //Lvw_HieUng.Items.Clear();
+            Lvw_HieUng.Clear();
+            imageList1.Images.Clear();
+            objectAnimationService.AddAnimation(selectedEmployee.value, imageList1, Lvw_HieUng);
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            FormHoa formHoa = new FormHoa();
+            formHoa.ShowDialog();
+        }
 
         private void DrawLedByList(List<PointColorModel> pointColorModels,bool check =false)
         {
@@ -202,6 +171,17 @@ namespace FullMin
             {
                 ledService.DrawLead(item,check);
             }
+        }
+        private void AddListAnimation()
+        {
+            objectAnimationService.AddAnimation("AnimationBackground", imageList1, Lvw_HieUng);
+            cb_animation.DisplayMember = "Text";
+            cb_animation.ValueMember = "Value";
+            cb_animation.Items.Add(new SelectItem() { text= "Hiệu ứng nền", value = "AnimationBackground" });
+            cb_animation.Items.Add(new SelectItem() { text = "Hiệu ứng viền", value = "AnimationBorder" });
+            cb_animation.Items.Add(new SelectItem() { text = "Hiệu ứng hình ảnh", value = "AnimationImage" });
+            cb_animation.Items.Add(new SelectItem() { text = "Hiệu ứng chữ", value = "AnimationText" });
+            cb_animation.Items.Add(new SelectItem() { text = "Hiệu ứng động", value = "AnimationActive" });
         }
     }
 }
