@@ -16,7 +16,12 @@ namespace FullMin.Service
         private bool isDrawSelect = true;
         private GraphicsPath polygonPath = new GraphicsPath();
         private Point distancePoint= new Point();
-
+        /// <summary>
+        /// Drawing area select
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="buttons"></param>
+        /// <param name="ptb_DrawLead"></param>
         public void DrawingSelect(Point point, MouseButtons buttons, PictureBox ptb_DrawLead)
         {
             if (isDrawSelect && buttons == MouseButtons.Left)
@@ -28,8 +33,12 @@ namespace FullMin.Service
                 ptb_DrawLead.Invalidate();
             }
         }
-
-        public void EndSelect(PictureBox ptb_DrawLead)
+        /// <summary>
+        /// end area select
+        /// </summary>
+        /// <param name="ptb_DrawLead"></param>
+        /// <param name="point"></param>
+        public void EndSelect(PictureBox ptb_DrawLead, Point point)
         {
             if (isDrawSelect)
             {
@@ -38,9 +47,10 @@ namespace FullMin.Service
                 UpdateCurveSelected();
                 ptb_DrawLead.Invalidate();
             }
-            else
+            else if(!CheckInsideRectangle(point))
             {
                 isDrawSelect = true;
+                ResetAllSelect();
                 ptb_DrawLead.Invalidate();
             }
         }
@@ -94,7 +104,6 @@ namespace FullMin.Service
                 ResetAllSelect();
                 points = new List<PointF>();
                 points.Add(new PointF(pointStart.X, pointStart.Y));
-                
             }
         }
 
@@ -105,6 +114,7 @@ namespace FullMin.Service
                 if (distancePoint.X == 0) distancePoint = pointStart;
             }
         }
+
         public void EndSDistanceSelect(Point pointEnd)
         {
             if (CheckInsideRectangle(pointEnd))
@@ -115,28 +125,24 @@ namespace FullMin.Service
             
         }
 
-
-        #region-----private----
-
-        private void DrawRetangle(Graphics graphics)
+        public void DrawingCurveSelected(List<PointF> points, Graphics graphics)
         {
-            using (Pen pen = new Pen(Color.Blue, 2)
-            {
-                DashStyle = DashStyle.Custom
-            })
-            {
-                // viền hình
-                graphics.DrawRectangle(pen, rectangleSelect);
-                // Tạo đối tượng SolidBrush với màu xanh và độ mờ
-                Color greenColor = Color.FromArgb(100, Color.Blue);
-                SolidBrush brush = new SolidBrush(greenColor);
-                // Vẽ hình chữ nhật với màu fill
-                graphics.FillRectangle(brush, rectangleSelect);
-                brush.Dispose();
-            }
+            GraphicsPath path = new GraphicsPath();
+            DataStatic.listPointResize = new List<GraphicsPath>();
+            float maxX = points.Max(x => x.X);//? points[0]: points[2];
+            float maxY = points.Max(x => x.Y);
+            float width = Math.Abs(points[0].X - points[1].X) / 2;
+            float heigth = Math.Abs(points[0].Y - points[3].Y) / 2;
+            PointF PointMax = points[0].X > points[2].X && points[0].Y > points[2].Y ? points[0] : points[2];
+            Rectangle rectangle = new Rectangle(Convert.ToInt32(maxX - 4), Convert.ToInt32(maxY - 4), 8, 8);
+            addPointResize(rectangle, 0, 0, graphics, maxX, maxY, path);
+            addPointResize(rectangle, width, 0, graphics, maxX, maxY, path);
+            addPointResize(rectangle, 0, heigth, graphics, maxX, maxY, path);
+            addPointResize(rectangle, 0, (heigth * 2), graphics, maxX, maxY, path, true);
+
         }
 
-        private void UpdateCurveSelected()
+        public void UpdateCurveSelected()
         {
             var listShape = DataStatic.listShape.FindAll(x => x.isSelect);
             List<PointF> points = new List<PointF>();
@@ -166,6 +172,36 @@ namespace FullMin.Service
 
         }
 
+        public bool CheckExitsAreaSelected()
+        {
+            if (rectangleSelect.X >= 0 && rectangleSelect.Y >= 0) return true;
+            return false;
+            
+        }
+
+
+        #region-----private----
+
+        private void DrawRetangle(Graphics graphics)
+        {
+            if(rectangleSelect.X >= 0 && rectangleSelect.Y >=0)
+            {
+                using (Pen pen = new Pen(Color.Blue, 2)
+                {
+                    DashStyle = DashStyle.Custom
+                })
+                {
+                    // viền hình
+                    graphics.DrawRectangle(pen, rectangleSelect);
+                    // Tạo đối tượng SolidBrush với màu xanh và độ mờ
+                    Color greenColor = Color.FromArgb(100, Color.Blue);
+                    SolidBrush brush = new SolidBrush(greenColor);
+                    // Vẽ hình chữ nhật với màu fill
+                    graphics.FillRectangle(brush, rectangleSelect);
+                    brush.Dispose();
+                }
+            }
+        }
         private void MoveDistanceSelect(Point pointEnd)
         {
             Point distance = new Point((pointEnd.X - distancePoint.X), (pointEnd.Y - distancePoint.Y));
@@ -211,6 +247,26 @@ namespace FullMin.Service
             points = new List<PointF>();
             distancePoint = new Point(0, 0);
             ChangeSelectDistanceByShape(distancePoint);
+        }
+        private void addPointResize(Rectangle rectangle, float width, float height, Graphics graphics,
+            float maxX, float maxY, GraphicsPath path, bool isCheck = false)
+        {
+            rectangle.X = width == 0 ? Convert.ToInt32(maxX - 4) : Convert.ToInt32(maxX - width - 4);
+            rectangle.Y = height == 0 ? Convert.ToInt32(maxY - 4) : Convert.ToInt32(maxY - height - 4);
+            if (!isCheck)
+            {
+                graphics.FillRectangle(new SolidBrush(Color.Blue), rectangle);
+                path.AddRectangle(rectangle);
+                DataStatic.listPointResize.Add(path);
+            }
+            else
+            {
+                graphics.FillEllipse(new SolidBrush(Color.Blue), rectangle);
+                path.AddEllipse(rectangle);
+                DataStatic.listPointResize.Add(path);
+            }
+
+
         }
         #endregion
     }

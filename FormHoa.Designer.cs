@@ -32,27 +32,27 @@ namespace FullMin
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoa));
             this.ptb_DrawLead = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rjButton2 = new FullMin.Service.RJButton();
-            this.rjButton1 = new FullMin.Service.RJButton();
+            this.rjButton19 = new FullMin.Service.RJButton();
+            this.rjButton18 = new FullMin.Service.RJButton();
+            this.rjButton17 = new FullMin.Service.RJButton();
+            this.rjButton16 = new FullMin.Service.RJButton();
+            this.rjButton15 = new FullMin.Service.RJButton();
+            this.rjButton14 = new FullMin.Service.RJButton();
+            this.rjButton13 = new FullMin.Service.RJButton();
+            this.rjButton12 = new FullMin.Service.RJButton();
+            this.rBt_insertLead = new FullMin.Service.RJButton();
+            this.rjButton10 = new FullMin.Service.RJButton();
+            this.rjButton9 = new FullMin.Service.RJButton();
+            this.rjButton8 = new FullMin.Service.RJButton();
+            this.rjBt_CreateLine = new FullMin.Service.RJButton();
+            this.rjButton6 = new FullMin.Service.RJButton();
+            this.rjButton5 = new FullMin.Service.RJButton();
+            this.rBt_delete = new FullMin.Service.RJButton();
+            this.rBt_clone = new FullMin.Service.RJButton();
             this.rjButton4 = new FullMin.Service.RJButton();
             this.rjButton3 = new FullMin.Service.RJButton();
             this.rjBt_pen = new FullMin.Service.RJButton();
             this.rjBt_home = new FullMin.Service.RJButton();
-            this.rjButton5 = new FullMin.Service.RJButton();
-            this.rjButton6 = new FullMin.Service.RJButton();
-            this.rjButton7 = new FullMin.Service.RJButton();
-            this.rjButton8 = new FullMin.Service.RJButton();
-            this.rjButton9 = new FullMin.Service.RJButton();
-            this.rjButton10 = new FullMin.Service.RJButton();
-            this.rjButton11 = new FullMin.Service.RJButton();
-            this.rjButton12 = new FullMin.Service.RJButton();
-            this.rjButton13 = new FullMin.Service.RJButton();
-            this.rjButton14 = new FullMin.Service.RJButton();
-            this.rjButton15 = new FullMin.Service.RJButton();
-            this.rjButton16 = new FullMin.Service.RJButton();
-            this.rjButton17 = new FullMin.Service.RJButton();
-            this.rjButton18 = new FullMin.Service.RJButton();
-            this.rjButton19 = new FullMin.Service.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_DrawLead)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@ namespace FullMin
             this.ptb_DrawLead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptb_DrawLead.TabIndex = 0;
             this.ptb_DrawLead.TabStop = false;
+            this.ptb_DrawLead.Click += new System.EventHandler(this.ptb_DrawLead_Click);
             this.ptb_DrawLead.Paint += new System.Windows.Forms.PaintEventHandler(this.ptb_DrawLead_Paint);
             this.ptb_DrawLead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ptb_DrawLead_MouseDown);
             this.ptb_DrawLead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptb_DrawLead_MouseMove);
@@ -82,15 +83,15 @@ namespace FullMin
             this.panel1.Controls.Add(this.rjButton14);
             this.panel1.Controls.Add(this.rjButton13);
             this.panel1.Controls.Add(this.rjButton12);
-            this.panel1.Controls.Add(this.rjButton11);
+            this.panel1.Controls.Add(this.rBt_insertLead);
             this.panel1.Controls.Add(this.rjButton10);
             this.panel1.Controls.Add(this.rjButton9);
             this.panel1.Controls.Add(this.rjButton8);
-            this.panel1.Controls.Add(this.rjButton7);
+            this.panel1.Controls.Add(this.rjBt_CreateLine);
             this.panel1.Controls.Add(this.rjButton6);
             this.panel1.Controls.Add(this.rjButton5);
-            this.panel1.Controls.Add(this.rjButton2);
-            this.panel1.Controls.Add(this.rjButton1);
+            this.panel1.Controls.Add(this.rBt_delete);
+            this.panel1.Controls.Add(this.rBt_clone);
             this.panel1.Controls.Add(this.rjButton4);
             this.panel1.Controls.Add(this.rjButton3);
             this.panel1.Controls.Add(this.rjBt_pen);
@@ -100,45 +101,348 @@ namespace FullMin
             this.panel1.Size = new System.Drawing.Size(1353, 107);
             this.panel1.TabIndex = 1;
             // 
-            // rjButton2
+            // rjButton19
             // 
-            this.rjButton2.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.BackColor = System.Drawing.Color.Black;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton2.BorderColor = System.Drawing.Color.White;
-            this.rjButton2.BorderRadius = 20;
-            this.rjButton2.BorderSize = 2;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.Image = ((System.Drawing.Image)(resources.GetObject("rjButton2.Image")));
-            this.rjButton2.Location = new System.Drawing.Point(103, 11);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(40, 40);
-            this.rjButton2.TabIndex = 8;
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton19.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton19.BackColor = System.Drawing.Color.Black;
+            this.rjButton19.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton19.BorderColor = System.Drawing.Color.White;
+            this.rjButton19.BorderRadius = 20;
+            this.rjButton19.BorderSize = 2;
+            this.rjButton19.FlatAppearance.BorderSize = 0;
+            this.rjButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton19.ForeColor = System.Drawing.Color.White;
+            this.rjButton19.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton19.Image = ((System.Drawing.Image)(resources.GetObject("rjButton19.Image")));
+            this.rjButton19.Location = new System.Drawing.Point(211, 59);
+            this.rjButton19.Name = "rjButton19";
+            this.rjButton19.Size = new System.Drawing.Size(40, 40);
+            this.rjButton19.TabIndex = 23;
+            this.rjButton19.TextColor = System.Drawing.Color.White;
+            this.rjButton19.UseVisualStyleBackColor = false;
             // 
-            // rjButton1
+            // rjButton18
             // 
-            this.rjButton1.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BackColor = System.Drawing.Color.Black;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton1.BorderColor = System.Drawing.Color.White;
-            this.rjButton1.BorderRadius = 20;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.Image = ((System.Drawing.Image)(resources.GetObject("rjButton1.Image")));
-            this.rjButton1.Location = new System.Drawing.Point(57, 11);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(40, 40);
-            this.rjButton1.TabIndex = 7;
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton18.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton18.BackColor = System.Drawing.Color.Black;
+            this.rjButton18.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton18.BorderColor = System.Drawing.Color.White;
+            this.rjButton18.BorderRadius = 20;
+            this.rjButton18.BorderSize = 2;
+            this.rjButton18.FlatAppearance.BorderSize = 0;
+            this.rjButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton18.ForeColor = System.Drawing.Color.White;
+            this.rjButton18.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton18.Image = ((System.Drawing.Image)(resources.GetObject("rjButton18.Image")));
+            this.rjButton18.Location = new System.Drawing.Point(257, 59);
+            this.rjButton18.Name = "rjButton18";
+            this.rjButton18.Size = new System.Drawing.Size(40, 40);
+            this.rjButton18.TabIndex = 22;
+            this.rjButton18.TextColor = System.Drawing.Color.White;
+            this.rjButton18.UseVisualStyleBackColor = false;
+            // 
+            // rjButton17
+            // 
+            this.rjButton17.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton17.BackColor = System.Drawing.Color.Black;
+            this.rjButton17.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton17.BorderColor = System.Drawing.Color.White;
+            this.rjButton17.BorderRadius = 20;
+            this.rjButton17.BorderSize = 2;
+            this.rjButton17.FlatAppearance.BorderSize = 0;
+            this.rjButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton17.ForeColor = System.Drawing.Color.White;
+            this.rjButton17.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton17.Image = ((System.Drawing.Image)(resources.GetObject("rjButton17.Image")));
+            this.rjButton17.Location = new System.Drawing.Point(11, 59);
+            this.rjButton17.Name = "rjButton17";
+            this.rjButton17.Size = new System.Drawing.Size(40, 40);
+            this.rjButton17.TabIndex = 21;
+            this.rjButton17.TextColor = System.Drawing.Color.White;
+            this.rjButton17.UseVisualStyleBackColor = false;
+            // 
+            // rjButton16
+            // 
+            this.rjButton16.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton16.BackColor = System.Drawing.Color.Black;
+            this.rjButton16.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton16.BorderColor = System.Drawing.Color.White;
+            this.rjButton16.BorderRadius = 20;
+            this.rjButton16.BorderSize = 2;
+            this.rjButton16.FlatAppearance.BorderSize = 0;
+            this.rjButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton16.ForeColor = System.Drawing.Color.White;
+            this.rjButton16.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton16.Image = ((System.Drawing.Image)(resources.GetObject("rjButton16.Image")));
+            this.rjButton16.Location = new System.Drawing.Point(57, 59);
+            this.rjButton16.Name = "rjButton16";
+            this.rjButton16.Size = new System.Drawing.Size(40, 40);
+            this.rjButton16.TabIndex = 20;
+            this.rjButton16.TextColor = System.Drawing.Color.White;
+            this.rjButton16.UseVisualStyleBackColor = false;
+            // 
+            // rjButton15
+            // 
+            this.rjButton15.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton15.BackColor = System.Drawing.Color.Black;
+            this.rjButton15.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton15.BorderColor = System.Drawing.Color.White;
+            this.rjButton15.BorderRadius = 20;
+            this.rjButton15.BorderSize = 2;
+            this.rjButton15.FlatAppearance.BorderSize = 0;
+            this.rjButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton15.ForeColor = System.Drawing.Color.White;
+            this.rjButton15.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton15.Image = ((System.Drawing.Image)(resources.GetObject("rjButton15.Image")));
+            this.rjButton15.Location = new System.Drawing.Point(103, 57);
+            this.rjButton15.Name = "rjButton15";
+            this.rjButton15.Size = new System.Drawing.Size(40, 40);
+            this.rjButton15.TabIndex = 19;
+            this.rjButton15.TextColor = System.Drawing.Color.White;
+            this.rjButton15.UseVisualStyleBackColor = false;
+            // 
+            // rjButton14
+            // 
+            this.rjButton14.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton14.BackColor = System.Drawing.Color.Black;
+            this.rjButton14.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton14.BorderColor = System.Drawing.Color.White;
+            this.rjButton14.BorderRadius = 20;
+            this.rjButton14.BorderSize = 2;
+            this.rjButton14.FlatAppearance.BorderSize = 0;
+            this.rjButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton14.ForeColor = System.Drawing.Color.White;
+            this.rjButton14.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton14.Image = ((System.Drawing.Image)(resources.GetObject("rjButton14.Image")));
+            this.rjButton14.Location = new System.Drawing.Point(165, 59);
+            this.rjButton14.Name = "rjButton14";
+            this.rjButton14.Size = new System.Drawing.Size(40, 40);
+            this.rjButton14.TabIndex = 18;
+            this.rjButton14.TextColor = System.Drawing.Color.White;
+            this.rjButton14.UseVisualStyleBackColor = false;
+            // 
+            // rjButton13
+            // 
+            this.rjButton13.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton13.BackColor = System.Drawing.Color.Black;
+            this.rjButton13.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton13.BorderColor = System.Drawing.Color.White;
+            this.rjButton13.BorderRadius = 20;
+            this.rjButton13.BorderSize = 2;
+            this.rjButton13.FlatAppearance.BorderSize = 0;
+            this.rjButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton13.ForeColor = System.Drawing.Color.White;
+            this.rjButton13.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton13.Image = ((System.Drawing.Image)(resources.GetObject("rjButton13.Image")));
+            this.rjButton13.Location = new System.Drawing.Point(600, 11);
+            this.rjButton13.Name = "rjButton13";
+            this.rjButton13.Size = new System.Drawing.Size(40, 40);
+            this.rjButton13.TabIndex = 17;
+            this.rjButton13.TextColor = System.Drawing.Color.White;
+            this.rjButton13.UseVisualStyleBackColor = false;
+            // 
+            // rjButton12
+            // 
+            this.rjButton12.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton12.BackColor = System.Drawing.Color.Black;
+            this.rjButton12.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton12.BorderColor = System.Drawing.Color.White;
+            this.rjButton12.BorderRadius = 20;
+            this.rjButton12.BorderSize = 2;
+            this.rjButton12.FlatAppearance.BorderSize = 0;
+            this.rjButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton12.ForeColor = System.Drawing.Color.White;
+            this.rjButton12.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton12.Image = ((System.Drawing.Image)(resources.GetObject("rjButton12.Image")));
+            this.rjButton12.Location = new System.Drawing.Point(554, 11);
+            this.rjButton12.Name = "rjButton12";
+            this.rjButton12.Size = new System.Drawing.Size(40, 40);
+            this.rjButton12.TabIndex = 16;
+            this.rjButton12.TextColor = System.Drawing.Color.White;
+            this.rjButton12.UseVisualStyleBackColor = false;
+            // 
+            // rBt_insertLead
+            // 
+            this.rBt_insertLead.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_insertLead.BackColor = System.Drawing.Color.Black;
+            this.rBt_insertLead.BackgroundColor = System.Drawing.Color.Black;
+            this.rBt_insertLead.BorderColor = System.Drawing.Color.White;
+            this.rBt_insertLead.BorderRadius = 20;
+            this.rBt_insertLead.BorderSize = 2;
+            this.rBt_insertLead.FlatAppearance.BorderSize = 0;
+            this.rBt_insertLead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rBt_insertLead.ForeColor = System.Drawing.Color.White;
+            this.rBt_insertLead.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_insertLead.Image = ((System.Drawing.Image)(resources.GetObject("rBt_insertLead.Image")));
+            this.rBt_insertLead.Location = new System.Drawing.Point(462, 11);
+            this.rBt_insertLead.Name = "rBt_insertLead";
+            this.rBt_insertLead.Size = new System.Drawing.Size(40, 40);
+            this.rBt_insertLead.TabIndex = 15;
+            this.rBt_insertLead.TextColor = System.Drawing.Color.White;
+            this.rBt_insertLead.UseVisualStyleBackColor = false;
+            // 
+            // rjButton10
+            // 
+            this.rjButton10.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton10.BackColor = System.Drawing.Color.Black;
+            this.rjButton10.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton10.BorderColor = System.Drawing.Color.White;
+            this.rjButton10.BorderRadius = 20;
+            this.rjButton10.BorderSize = 2;
+            this.rjButton10.FlatAppearance.BorderSize = 0;
+            this.rjButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton10.ForeColor = System.Drawing.Color.White;
+            this.rjButton10.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton10.Image = ((System.Drawing.Image)(resources.GetObject("rjButton10.Image")));
+            this.rjButton10.Location = new System.Drawing.Point(508, 11);
+            this.rjButton10.Name = "rjButton10";
+            this.rjButton10.Size = new System.Drawing.Size(40, 40);
+            this.rjButton10.TabIndex = 14;
+            this.rjButton10.TextColor = System.Drawing.Color.White;
+            this.rjButton10.UseVisualStyleBackColor = false;
+            // 
+            // rjButton9
+            // 
+            this.rjButton9.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton9.BackColor = System.Drawing.Color.Black;
+            this.rjButton9.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton9.BorderColor = System.Drawing.Color.White;
+            this.rjButton9.BorderRadius = 20;
+            this.rjButton9.BorderSize = 2;
+            this.rjButton9.FlatAppearance.BorderSize = 0;
+            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton9.ForeColor = System.Drawing.Color.White;
+            this.rjButton9.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton9.Image = ((System.Drawing.Image)(resources.GetObject("rjButton9.Image")));
+            this.rjButton9.Location = new System.Drawing.Point(349, 11);
+            this.rjButton9.Name = "rjButton9";
+            this.rjButton9.Size = new System.Drawing.Size(40, 40);
+            this.rjButton9.TabIndex = 13;
+            this.rjButton9.TextColor = System.Drawing.Color.White;
+            this.rjButton9.UseVisualStyleBackColor = false;
+            // 
+            // rjButton8
+            // 
+            this.rjButton8.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton8.BackColor = System.Drawing.Color.Black;
+            this.rjButton8.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton8.BorderColor = System.Drawing.Color.White;
+            this.rjButton8.BorderRadius = 20;
+            this.rjButton8.BorderSize = 2;
+            this.rjButton8.FlatAppearance.BorderSize = 0;
+            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton8.ForeColor = System.Drawing.Color.White;
+            this.rjButton8.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
+            this.rjButton8.Location = new System.Drawing.Point(303, 11);
+            this.rjButton8.Name = "rjButton8";
+            this.rjButton8.Size = new System.Drawing.Size(40, 40);
+            this.rjButton8.TabIndex = 12;
+            this.rjButton8.TextColor = System.Drawing.Color.White;
+            this.rjButton8.UseVisualStyleBackColor = false;
+            // 
+            // rjBt_CreateLine
+            // 
+            this.rjBt_CreateLine.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjBt_CreateLine.BackColor = System.Drawing.Color.Black;
+            this.rjBt_CreateLine.BackgroundColor = System.Drawing.Color.Black;
+            this.rjBt_CreateLine.BorderColor = System.Drawing.Color.White;
+            this.rjBt_CreateLine.BorderRadius = 20;
+            this.rjBt_CreateLine.BorderSize = 2;
+            this.rjBt_CreateLine.FlatAppearance.BorderSize = 0;
+            this.rjBt_CreateLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjBt_CreateLine.ForeColor = System.Drawing.Color.White;
+            this.rjBt_CreateLine.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjBt_CreateLine.Image = ((System.Drawing.Image)(resources.GetObject("rjBt_CreateLine.Image")));
+            this.rjBt_CreateLine.Location = new System.Drawing.Point(165, 11);
+            this.rjBt_CreateLine.Name = "rjBt_CreateLine";
+            this.rjBt_CreateLine.Size = new System.Drawing.Size(40, 40);
+            this.rjBt_CreateLine.TabIndex = 11;
+            this.rjBt_CreateLine.TextColor = System.Drawing.Color.White;
+            this.rjBt_CreateLine.UseVisualStyleBackColor = false;
+            this.rjBt_CreateLine.Click += new System.EventHandler(this.rjBt_CreateLine_Click);
+            // 
+            // rjButton6
+            // 
+            this.rjButton6.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton6.BackColor = System.Drawing.Color.Black;
+            this.rjButton6.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton6.BorderColor = System.Drawing.Color.White;
+            this.rjButton6.BorderRadius = 20;
+            this.rjButton6.BorderSize = 2;
+            this.rjButton6.FlatAppearance.BorderSize = 0;
+            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton6.ForeColor = System.Drawing.Color.White;
+            this.rjButton6.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton6.Image = ((System.Drawing.Image)(resources.GetObject("rjButton6.Image")));
+            this.rjButton6.Location = new System.Drawing.Point(211, 11);
+            this.rjButton6.Name = "rjButton6";
+            this.rjButton6.Size = new System.Drawing.Size(40, 40);
+            this.rjButton6.TabIndex = 10;
+            this.rjButton6.TextColor = System.Drawing.Color.White;
+            this.rjButton6.UseVisualStyleBackColor = false;
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BackColor = System.Drawing.Color.Black;
+            this.rjButton5.BackgroundColor = System.Drawing.Color.Black;
+            this.rjButton5.BorderColor = System.Drawing.Color.White;
+            this.rjButton5.BorderRadius = 20;
+            this.rjButton5.BorderSize = 2;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
+            this.rjButton5.Location = new System.Drawing.Point(257, 11);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(40, 40);
+            this.rjButton5.TabIndex = 9;
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            // 
+            // rBt_delete
+            // 
+            this.rBt_delete.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_delete.BackColor = System.Drawing.Color.Black;
+            this.rBt_delete.BackgroundColor = System.Drawing.Color.Black;
+            this.rBt_delete.BorderColor = System.Drawing.Color.White;
+            this.rBt_delete.BorderRadius = 20;
+            this.rBt_delete.BorderSize = 2;
+            this.rBt_delete.FlatAppearance.BorderSize = 0;
+            this.rBt_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rBt_delete.ForeColor = System.Drawing.Color.White;
+            this.rBt_delete.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_delete.Image = ((System.Drawing.Image)(resources.GetObject("rBt_delete.Image")));
+            this.rBt_delete.Location = new System.Drawing.Point(103, 11);
+            this.rBt_delete.Name = "rBt_delete";
+            this.rBt_delete.Size = new System.Drawing.Size(40, 40);
+            this.rBt_delete.TabIndex = 8;
+            this.rBt_delete.TextColor = System.Drawing.Color.White;
+            this.rBt_delete.UseVisualStyleBackColor = false;
+            this.rBt_delete.Click += new System.EventHandler(this.rBt_delete_Click);
+            // 
+            // rBt_clone
+            // 
+            this.rBt_clone.ActiveColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_clone.BackColor = System.Drawing.Color.Black;
+            this.rBt_clone.BackgroundColor = System.Drawing.Color.Black;
+            this.rBt_clone.BorderColor = System.Drawing.Color.White;
+            this.rBt_clone.BorderRadius = 20;
+            this.rBt_clone.BorderSize = 2;
+            this.rBt_clone.FlatAppearance.BorderSize = 0;
+            this.rBt_clone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rBt_clone.ForeColor = System.Drawing.Color.White;
+            this.rBt_clone.HoverColor = System.Drawing.Color.PaleVioletRed;
+            this.rBt_clone.Image = ((System.Drawing.Image)(resources.GetObject("rBt_clone.Image")));
+            this.rBt_clone.Location = new System.Drawing.Point(57, 11);
+            this.rBt_clone.Name = "rBt_clone";
+            this.rBt_clone.Size = new System.Drawing.Size(40, 40);
+            this.rBt_clone.TabIndex = 7;
+            this.rBt_clone.TextColor = System.Drawing.Color.White;
+            this.rBt_clone.UseVisualStyleBackColor = false;
+            this.rBt_clone.Click += new System.EventHandler(this.rBt_clone_Click);
             // 
             // rjButton4
             // 
@@ -224,306 +528,6 @@ namespace FullMin
             this.rjBt_home.UseVisualStyleBackColor = false;
             this.rjBt_home.Click += new System.EventHandler(this.rjButton2_Click);
             // 
-            // rjButton5
-            // 
-            this.rjButton5.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton5.BackColor = System.Drawing.Color.Black;
-            this.rjButton5.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton5.BorderColor = System.Drawing.Color.White;
-            this.rjButton5.BorderRadius = 20;
-            this.rjButton5.BorderSize = 2;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
-            this.rjButton5.Location = new System.Drawing.Point(257, 11);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(40, 40);
-            this.rjButton5.TabIndex = 9;
-            this.rjButton5.TextColor = System.Drawing.Color.White;
-            this.rjButton5.UseVisualStyleBackColor = false;
-            // 
-            // rjButton6
-            // 
-            this.rjButton6.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton6.BackColor = System.Drawing.Color.Black;
-            this.rjButton6.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton6.BorderColor = System.Drawing.Color.White;
-            this.rjButton6.BorderRadius = 20;
-            this.rjButton6.BorderSize = 2;
-            this.rjButton6.FlatAppearance.BorderSize = 0;
-            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton6.Image = ((System.Drawing.Image)(resources.GetObject("rjButton6.Image")));
-            this.rjButton6.Location = new System.Drawing.Point(211, 11);
-            this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(40, 40);
-            this.rjButton6.TabIndex = 10;
-            this.rjButton6.TextColor = System.Drawing.Color.White;
-            this.rjButton6.UseVisualStyleBackColor = false;
-            // 
-            // rjButton7
-            // 
-            this.rjButton7.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton7.BackColor = System.Drawing.Color.Black;
-            this.rjButton7.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton7.BorderColor = System.Drawing.Color.White;
-            this.rjButton7.BorderRadius = 20;
-            this.rjButton7.BorderSize = 2;
-            this.rjButton7.FlatAppearance.BorderSize = 0;
-            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton7.ForeColor = System.Drawing.Color.White;
-            this.rjButton7.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton7.Image = ((System.Drawing.Image)(resources.GetObject("rjButton7.Image")));
-            this.rjButton7.Location = new System.Drawing.Point(165, 11);
-            this.rjButton7.Name = "rjButton7";
-            this.rjButton7.Size = new System.Drawing.Size(40, 40);
-            this.rjButton7.TabIndex = 11;
-            this.rjButton7.TextColor = System.Drawing.Color.White;
-            this.rjButton7.UseVisualStyleBackColor = false;
-            // 
-            // rjButton8
-            // 
-            this.rjButton8.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton8.BackColor = System.Drawing.Color.Black;
-            this.rjButton8.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton8.BorderColor = System.Drawing.Color.White;
-            this.rjButton8.BorderRadius = 20;
-            this.rjButton8.BorderSize = 2;
-            this.rjButton8.FlatAppearance.BorderSize = 0;
-            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton8.ForeColor = System.Drawing.Color.White;
-            this.rjButton8.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
-            this.rjButton8.Location = new System.Drawing.Point(303, 11);
-            this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(40, 40);
-            this.rjButton8.TabIndex = 12;
-            this.rjButton8.TextColor = System.Drawing.Color.White;
-            this.rjButton8.UseVisualStyleBackColor = false;
-            // 
-            // rjButton9
-            // 
-            this.rjButton9.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton9.BackColor = System.Drawing.Color.Black;
-            this.rjButton9.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton9.BorderColor = System.Drawing.Color.White;
-            this.rjButton9.BorderRadius = 20;
-            this.rjButton9.BorderSize = 2;
-            this.rjButton9.FlatAppearance.BorderSize = 0;
-            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton9.ForeColor = System.Drawing.Color.White;
-            this.rjButton9.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton9.Image = ((System.Drawing.Image)(resources.GetObject("rjButton9.Image")));
-            this.rjButton9.Location = new System.Drawing.Point(349, 11);
-            this.rjButton9.Name = "rjButton9";
-            this.rjButton9.Size = new System.Drawing.Size(40, 40);
-            this.rjButton9.TabIndex = 13;
-            this.rjButton9.TextColor = System.Drawing.Color.White;
-            this.rjButton9.UseVisualStyleBackColor = false;
-            // 
-            // rjButton10
-            // 
-            this.rjButton10.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton10.BackColor = System.Drawing.Color.Black;
-            this.rjButton10.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton10.BorderColor = System.Drawing.Color.White;
-            this.rjButton10.BorderRadius = 20;
-            this.rjButton10.BorderSize = 2;
-            this.rjButton10.FlatAppearance.BorderSize = 0;
-            this.rjButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton10.ForeColor = System.Drawing.Color.White;
-            this.rjButton10.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton10.Image = ((System.Drawing.Image)(resources.GetObject("rjButton10.Image")));
-            this.rjButton10.Location = new System.Drawing.Point(508, 11);
-            this.rjButton10.Name = "rjButton10";
-            this.rjButton10.Size = new System.Drawing.Size(40, 40);
-            this.rjButton10.TabIndex = 14;
-            this.rjButton10.TextColor = System.Drawing.Color.White;
-            this.rjButton10.UseVisualStyleBackColor = false;
-            // 
-            // rjButton11
-            // 
-            this.rjButton11.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton11.BackColor = System.Drawing.Color.Black;
-            this.rjButton11.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton11.BorderColor = System.Drawing.Color.White;
-            this.rjButton11.BorderRadius = 20;
-            this.rjButton11.BorderSize = 2;
-            this.rjButton11.FlatAppearance.BorderSize = 0;
-            this.rjButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton11.ForeColor = System.Drawing.Color.White;
-            this.rjButton11.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton11.Image = ((System.Drawing.Image)(resources.GetObject("rjButton11.Image")));
-            this.rjButton11.Location = new System.Drawing.Point(462, 11);
-            this.rjButton11.Name = "rjButton11";
-            this.rjButton11.Size = new System.Drawing.Size(40, 40);
-            this.rjButton11.TabIndex = 15;
-            this.rjButton11.TextColor = System.Drawing.Color.White;
-            this.rjButton11.UseVisualStyleBackColor = false;
-            // 
-            // rjButton12
-            // 
-            this.rjButton12.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton12.BackColor = System.Drawing.Color.Black;
-            this.rjButton12.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton12.BorderColor = System.Drawing.Color.White;
-            this.rjButton12.BorderRadius = 20;
-            this.rjButton12.BorderSize = 2;
-            this.rjButton12.FlatAppearance.BorderSize = 0;
-            this.rjButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton12.ForeColor = System.Drawing.Color.White;
-            this.rjButton12.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton12.Image = ((System.Drawing.Image)(resources.GetObject("rjButton12.Image")));
-            this.rjButton12.Location = new System.Drawing.Point(554, 11);
-            this.rjButton12.Name = "rjButton12";
-            this.rjButton12.Size = new System.Drawing.Size(40, 40);
-            this.rjButton12.TabIndex = 16;
-            this.rjButton12.TextColor = System.Drawing.Color.White;
-            this.rjButton12.UseVisualStyleBackColor = false;
-            // 
-            // rjButton13
-            // 
-            this.rjButton13.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton13.BackColor = System.Drawing.Color.Black;
-            this.rjButton13.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton13.BorderColor = System.Drawing.Color.White;
-            this.rjButton13.BorderRadius = 20;
-            this.rjButton13.BorderSize = 2;
-            this.rjButton13.FlatAppearance.BorderSize = 0;
-            this.rjButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton13.ForeColor = System.Drawing.Color.White;
-            this.rjButton13.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton13.Image = ((System.Drawing.Image)(resources.GetObject("rjButton13.Image")));
-            this.rjButton13.Location = new System.Drawing.Point(600, 11);
-            this.rjButton13.Name = "rjButton13";
-            this.rjButton13.Size = new System.Drawing.Size(40, 40);
-            this.rjButton13.TabIndex = 17;
-            this.rjButton13.TextColor = System.Drawing.Color.White;
-            this.rjButton13.UseVisualStyleBackColor = false;
-            // 
-            // rjButton14
-            // 
-            this.rjButton14.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton14.BackColor = System.Drawing.Color.Black;
-            this.rjButton14.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton14.BorderColor = System.Drawing.Color.White;
-            this.rjButton14.BorderRadius = 20;
-            this.rjButton14.BorderSize = 2;
-            this.rjButton14.FlatAppearance.BorderSize = 0;
-            this.rjButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton14.ForeColor = System.Drawing.Color.White;
-            this.rjButton14.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton14.Image = ((System.Drawing.Image)(resources.GetObject("rjButton14.Image")));
-            this.rjButton14.Location = new System.Drawing.Point(165, 59);
-            this.rjButton14.Name = "rjButton14";
-            this.rjButton14.Size = new System.Drawing.Size(40, 40);
-            this.rjButton14.TabIndex = 18;
-            this.rjButton14.TextColor = System.Drawing.Color.White;
-            this.rjButton14.UseVisualStyleBackColor = false;
-            // 
-            // rjButton15
-            // 
-            this.rjButton15.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton15.BackColor = System.Drawing.Color.Black;
-            this.rjButton15.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton15.BorderColor = System.Drawing.Color.White;
-            this.rjButton15.BorderRadius = 20;
-            this.rjButton15.BorderSize = 2;
-            this.rjButton15.FlatAppearance.BorderSize = 0;
-            this.rjButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton15.ForeColor = System.Drawing.Color.White;
-            this.rjButton15.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton15.Image = ((System.Drawing.Image)(resources.GetObject("rjButton15.Image")));
-            this.rjButton15.Location = new System.Drawing.Point(103, 57);
-            this.rjButton15.Name = "rjButton15";
-            this.rjButton15.Size = new System.Drawing.Size(40, 40);
-            this.rjButton15.TabIndex = 19;
-            this.rjButton15.TextColor = System.Drawing.Color.White;
-            this.rjButton15.UseVisualStyleBackColor = false;
-            // 
-            // rjButton16
-            // 
-            this.rjButton16.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton16.BackColor = System.Drawing.Color.Black;
-            this.rjButton16.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton16.BorderColor = System.Drawing.Color.White;
-            this.rjButton16.BorderRadius = 20;
-            this.rjButton16.BorderSize = 2;
-            this.rjButton16.FlatAppearance.BorderSize = 0;
-            this.rjButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton16.ForeColor = System.Drawing.Color.White;
-            this.rjButton16.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton16.Image = ((System.Drawing.Image)(resources.GetObject("rjButton16.Image")));
-            this.rjButton16.Location = new System.Drawing.Point(57, 59);
-            this.rjButton16.Name = "rjButton16";
-            this.rjButton16.Size = new System.Drawing.Size(40, 40);
-            this.rjButton16.TabIndex = 20;
-            this.rjButton16.TextColor = System.Drawing.Color.White;
-            this.rjButton16.UseVisualStyleBackColor = false;
-            // 
-            // rjButton17
-            // 
-            this.rjButton17.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton17.BackColor = System.Drawing.Color.Black;
-            this.rjButton17.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton17.BorderColor = System.Drawing.Color.White;
-            this.rjButton17.BorderRadius = 20;
-            this.rjButton17.BorderSize = 2;
-            this.rjButton17.FlatAppearance.BorderSize = 0;
-            this.rjButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton17.ForeColor = System.Drawing.Color.White;
-            this.rjButton17.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton17.Image = ((System.Drawing.Image)(resources.GetObject("rjButton17.Image")));
-            this.rjButton17.Location = new System.Drawing.Point(11, 59);
-            this.rjButton17.Name = "rjButton17";
-            this.rjButton17.Size = new System.Drawing.Size(40, 40);
-            this.rjButton17.TabIndex = 21;
-            this.rjButton17.TextColor = System.Drawing.Color.White;
-            this.rjButton17.UseVisualStyleBackColor = false;
-            // 
-            // rjButton18
-            // 
-            this.rjButton18.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton18.BackColor = System.Drawing.Color.Black;
-            this.rjButton18.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton18.BorderColor = System.Drawing.Color.White;
-            this.rjButton18.BorderRadius = 20;
-            this.rjButton18.BorderSize = 2;
-            this.rjButton18.FlatAppearance.BorderSize = 0;
-            this.rjButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton18.ForeColor = System.Drawing.Color.White;
-            this.rjButton18.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton18.Image = ((System.Drawing.Image)(resources.GetObject("rjButton18.Image")));
-            this.rjButton18.Location = new System.Drawing.Point(257, 59);
-            this.rjButton18.Name = "rjButton18";
-            this.rjButton18.Size = new System.Drawing.Size(40, 40);
-            this.rjButton18.TabIndex = 22;
-            this.rjButton18.TextColor = System.Drawing.Color.White;
-            this.rjButton18.UseVisualStyleBackColor = false;
-            // 
-            // rjButton19
-            // 
-            this.rjButton19.ActiveColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton19.BackColor = System.Drawing.Color.Black;
-            this.rjButton19.BackgroundColor = System.Drawing.Color.Black;
-            this.rjButton19.BorderColor = System.Drawing.Color.White;
-            this.rjButton19.BorderRadius = 20;
-            this.rjButton19.BorderSize = 2;
-            this.rjButton19.FlatAppearance.BorderSize = 0;
-            this.rjButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton19.ForeColor = System.Drawing.Color.White;
-            this.rjButton19.HoverColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton19.Image = ((System.Drawing.Image)(resources.GetObject("rjButton19.Image")));
-            this.rjButton19.Location = new System.Drawing.Point(211, 59);
-            this.rjButton19.Name = "rjButton19";
-            this.rjButton19.Size = new System.Drawing.Size(40, 40);
-            this.rjButton19.TabIndex = 23;
-            this.rjButton19.TextColor = System.Drawing.Color.White;
-            this.rjButton19.UseVisualStyleBackColor = false;
-            // 
             // FormHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,8 +552,8 @@ namespace FullMin
         private Service.RJButton rjButton3;
         private Service.RJButton rjBt_pen;
         private Service.RJButton rjButton4;
-        private Service.RJButton rjButton2;
-        private Service.RJButton rjButton1;
+        private Service.RJButton rBt_delete;
+        private Service.RJButton rBt_clone;
         private Service.RJButton rjButton19;
         private Service.RJButton rjButton18;
         private Service.RJButton rjButton17;
@@ -558,11 +562,11 @@ namespace FullMin
         private Service.RJButton rjButton14;
         private Service.RJButton rjButton13;
         private Service.RJButton rjButton12;
-        private Service.RJButton rjButton11;
+        private Service.RJButton rBt_insertLead;
         private Service.RJButton rjButton10;
         private Service.RJButton rjButton9;
         private Service.RJButton rjButton8;
-        private Service.RJButton rjButton7;
+        private Service.RJButton rjBt_CreateLine;
         private Service.RJButton rjButton6;
         private Service.RJButton rjButton5;
     }

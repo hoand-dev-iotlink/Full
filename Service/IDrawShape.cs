@@ -13,5 +13,7 @@ namespace FullMin.Service
         void DrawingShape(Shape shape, Graphics graphics);
         void AddShape(Shape shape);
         void RemoveShape(Shape shape);
+        void CloneShape();
+        void NewShapeDefault(Point point, Color colorp, bool isSelectp = false);
     }
 }

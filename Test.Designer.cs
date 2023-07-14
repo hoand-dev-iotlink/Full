@@ -29,20 +29,9 @@ namespace FullMin
         /// </summary>
         private void InitializeComponent()
         {
-            this.glControl_test = new OpenTK.GLControl();
             this.button1 = new System.Windows.Forms.Button();
+            this.glControl1 = new OpenTK.GLControl();
             this.SuspendLayout();
-            // 
-            // glControl_test
-            // 
-            this.glControl_test.BackColor = System.Drawing.Color.Black;
-            this.glControl_test.Location = new System.Drawing.Point(194, 53);
-            this.glControl_test.Name = "glControl_test";
-            this.glControl_test.Size = new System.Drawing.Size(856, 504);
-            this.glControl_test.TabIndex = 0;
-            this.glControl_test.VSync = false;
-            this.glControl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_test_Paint);
-            this.glControl_test.Resize += new System.EventHandler(this.glControl_test_Resize);
             // 
             // button1
             // 
@@ -53,13 +42,24 @@ namespace FullMin
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // glControl1
+            // 
+            this.glControl1.BackColor = System.Drawing.Color.Black;
+            this.glControl1.ForeColor = System.Drawing.Color.Black;
+            this.glControl1.Location = new System.Drawing.Point(28, 65);
+            this.glControl1.Name = "glControl1";
+            this.glControl1.Size = new System.Drawing.Size(1077, 512);
+            this.glControl1.TabIndex = 2;
+            this.glControl1.VSync = false;
+            this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 589);
+            this.Controls.Add(this.glControl1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.glControl_test);
             this.Name = "Test";
             this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
@@ -68,8 +68,7 @@ namespace FullMin
         }
 
         #endregion
-
-        private OpenTK.GLControl glControl_test;
         private System.Windows.Forms.Button button1;
+        private OpenTK.GLControl glControl1;
     }
 }

@@ -12,11 +12,12 @@ namespace FullMin.Service
     {
         void StartSelect(Point pointStart);
         void DrawingSelect(Point point, MouseButtons buttons, PictureBox ptb_DrawLead);
-        void EndSelect(PictureBox ptb_DrawLead);
+        void EndSelect(PictureBox ptb_DrawLead,Point point);
         void PaintSelect(Graphics graphics, DrawShape drawShape);
         void MouseMoveSelect(Point point, PictureBox ptb_DrawLead);
         void StartDistanceSelect(Point pointStart);
-
         void EndSDistanceSelect(Point pointEnd);
+        void UpdateCurveSelected();
+        bool CheckExitsAreaSelected();
     }
 }

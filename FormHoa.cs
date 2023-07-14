@@ -1,9 +1,11 @@
 ﻿using FullMin.Model;
 using FullMin.Service;
+using FullMin.TravellingSalesman;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace FullMin
@@ -188,7 +190,7 @@ namespace FullMin
         {
             if (menuDraw.Home)
             {
-                retangleSelectService.EndSelect(ptb_DrawLead);
+                retangleSelectService.EndSelect(ptb_DrawLead,e.Location);
                 retangleSelectService.EndSDistanceSelect(e.Location);
                 //SelectMouse = true;
                 //UpdateCurveSelected();
@@ -279,31 +281,63 @@ namespace FullMin
             ToolTip1.SetToolTip(rjBt_home, "Hello");
         }
 
-        public void UpdateCurveSelected()
+        private void ptb_DrawLead_Click(object sender, EventArgs e)
         {
-            var listShape = DataStatic.listShape.FindAll(x => x.isSelect);
-            point = new List<PointF>();
-            point.Add(new PointF(0, 0));
-            point.Add(new PointF(0, 0));
-            point.Add(new PointF(0, 0));
-            float X, Y;
-            foreach (var item in listShape)
-            {
-                //min
-                X = point[0].X == 0 ? item.pointStart.X : (point[0].X > item.pointStart.X ? item.pointStart.X : point[0].X);
-                Y = point[0].Y == 0 ? item.pointStart.Y : (point[0].Y > item.pointStart.Y ? item.pointStart.Y : point[0].Y);
-                point[0] = new PointF(X, Y);
-                //max
-                X = point[2].X == 0 ? item.pointStart.X : (point[2].X < item.pointStart.X ? item.pointStart.X : point[2].X);
-                Y = point[2].Y == 0 ? item.pointStart.Y : (point[2].Y < item.pointStart.Y ? item.pointStart.Y : point[2].Y);
-                point[2] = new PointF(X, Y);
-            }
-            point[0] = new PointF(point[0].X - 3, point[0].Y - 3);
-            point[2] = new PointF(point[2].X + 9, point[2].Y + 9);
-            point[1] = new PointF(point[2].X, point[0].Y);//.Add(new PointF(e.Location.X, point[0].Y));
-            //point.Add(new PointF(e.Location.X, e.Location.Y));
-            point.Add(new PointF(point[0].X, point[2].Y));
+
         }
+
+        private void rBt_delete_Click(object sender, EventArgs e)
+        {
+            if (retangleSelectService.CheckExitsAreaSelected())
+            {
+                drawShape.RemoveShapExistSelect();
+                retangleSelectService.EndSelect(ptb_DrawLead, new Point() { X = 0, Y = 0 });
+            }
+        }
+
+        private void rjBt_CreateLine_Click(object sender, EventArgs e)
+        {
+            Location startLocation = new Location((int)DataStatic.listShape[0].pointStart.X, (int)DataStatic.listShape[0].pointStart.Y);
+            int count = DataStatic.listShape.Count;
+            Location[] locations = new Location[count - 1];
+            for (int i = 1; i < count; i++)
+            {
+                locations[i-1] = new Location((int)DataStatic.listShape[i].pointStart.X, (int)DataStatic.listShape[i].pointStart.Y);
+            }
+            var algorithm = new TravellingSalesmanAlgorithm(startLocation, locations, (count - 1) *2);
+
+            var bestSolutionSoFar = algorithm.GetBestSolutionSoFar().ToArray();
+            List<LineModel> lines = new List<LineModel>();
+            lines.Add(new LineModel() { pointStart = DataStatic.listShape[0].pointStart, pointEnd = new PointF(bestSolutionSoFar[0].X, bestSolutionSoFar[0].Y) });
+            for (int i = 0; i < bestSolutionSoFar.Length - 1; i++)
+            {
+                lines.Add(new LineModel() { pointStart = new PointF(bestSolutionSoFar[i].X, bestSolutionSoFar[i].Y), pointEnd = new PointF(bestSolutionSoFar[i+1].X, bestSolutionSoFar[i+1].Y) });
+            }
+
+        }
+
+
+        //private void FormHoa_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.Control && e.KeyCode == Keys.V && retangleSelectService.CheckExitsAreaSelected())
+        //    {
+        //        drawShape.CloneShape();
+        //        retangleSelectService.UpdateCurveSelected();
+        //        ResetPaint();
+        //    }
+        //}
+
+
+        private void rBt_clone_Click(object sender, EventArgs e)
+        {
+            if (retangleSelectService.CheckExitsAreaSelected())
+            {
+                drawShape.CloneShape();
+                retangleSelectService.UpdateCurveSelected();
+                ResetPaint();
+            }
+        }
+
 
     }
 }
