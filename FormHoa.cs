@@ -18,13 +18,14 @@ namespace FullMin
         private LedModel led, pointMouse;
         private MenuModel menuDraw = new MenuModel();
         private List<PointF> point = new List<PointF>();
+        private Location[] _bestSolutionSoFar;
         public FormHoa()
         {
             InitializeComponent();
             drawShape = new DrawShape();
             retangleSelectService = new RetangleSelectService();
             graphics = ptb_DrawLead.CreateGraphics();
-            CreateMatrixPoints(10, 10, 25);
+            CreateMatrixPoints(5, 5, 25);
 
         }
 
@@ -178,19 +179,19 @@ namespace FullMin
             //            rectangleSelect.Y = rectangleSelect.Y + distance.Y;
             //            ChangeDistanceByShape(distance);
             //            MouserectangleSelect = e.Location;
-                        
+
             //            ResetPaint();
             //        }
             //    }else
             //        ptb_DrawLead.Cursor = Cursors.Default;
             //}
-            
+
         }
         private void ptb_DrawLead_MouseUp(object sender, MouseEventArgs e)
         {
             if (menuDraw.Home)
             {
-                retangleSelectService.EndSelect(ptb_DrawLead,e.Location);
+                retangleSelectService.EndSelect(ptb_DrawLead, e.Location);
                 retangleSelectService.EndSDistanceSelect(e.Location);
                 //SelectMouse = true;
                 //UpdateCurveSelected();
@@ -201,7 +202,7 @@ namespace FullMin
             //    distance = new Point(0, 0);
             //    ChangeDistanceByShape(distance);
             //}
-            
+
         }
 
 
@@ -247,7 +248,7 @@ namespace FullMin
         }
 
 
-        
+
         public List<List<Point>> CreateMatrixPoints(int rows, int columns, int pointSpacing)
         {
             List<List<Point>> matrixPoints = new List<List<Point>>();
@@ -297,25 +298,67 @@ namespace FullMin
 
         private void rjBt_CreateLine_Click(object sender, EventArgs e)
         {
-            Location startLocation = new Location((int)DataStatic.listShape[0].pointStart.X, (int)DataStatic.listShape[0].pointStart.Y);
+            
             int count = DataStatic.listShape.Count;
-            Location[] locations = new Location[count - 1];
-            for (int i = 1; i < count; i++)
+            List<Point> lspoint = new List<Point>();
+            for (int i = 0; i < count; i++)
             {
-                locations[i-1] = new Location((int)DataStatic.listShape[i].pointStart.X, (int)DataStatic.listShape[i].pointStart.Y);
+                lspoint.Add(new Point((int)DataStatic.listShape[i].pointStart.X, (int)DataStatic.listShape[i].pointStart.Y));
+                //locations[i - 1] = new Location((int)DataStatic.listShape[i].pointStart.X, (int)DataStatic.listShape[i].pointStart.Y);
             }
-            var algorithm = new TravellingSalesmanAlgorithm(startLocation, locations, (count - 1) *2);
+            //TSPNew tSPNew = new TSPNew();
+            //var lstpoint = tSPNew.SolveTSP(lspoint);
+            MST mSTtoTSP = new MST();
+            var lstpoint = mSTtoTSP.MSTtoTSP(lspoint);
+            // Optimize the tour using the 2-Opt algorithm
+            List<Point> optimizedTour = mSTtoTSP.TwoOpt(lstpoint);
 
+            List<LineModel> lines = new List<LineModel>();
+            //lines.Add(new LineModel() { pointStart = DataStatic.listShape[0].pointStart, pointEnd = new PointF(bestSolutionSoFar[0].X, bestSolutionSoFar[0].Y) });
+            for (int i = 0; i < optimizedTour.Count -1; i++)
+            {
+                lines.Add(new LineModel() { pointStart = new PointF(optimizedTour[i].X, optimizedTour[i].Y), pointEnd = new PointF(optimizedTour[i + 1].X, optimizedTour[i + 1].Y) });
+            }
+            DataStatic.listLine = lines;
+            ResetPaint();
+
+            //OrTool orTool = new OrTool();
+            //orTool.init();
+            //TravellingSalesmanAlgorithm algorithm = new TravellingSalesmanAlgorithm(startLocation, locations, (count - 1) * 2);
+            //while (true)
+            //{
+            //    algorithm.MustMutateFailedCrossovers = false;
+            //    algorithm.MustDoCrossovers = true;
+            //    algorithm.Reproduce();
+
+            //    //if (_mutateDuplicates)
+            //    //    algorithm.MutateDuplicates();
+
+            //    var newSolution = algorithm.GetBestSolutionSoFar().ToArray();
+            //    if (_bestSolutionSoFar != null && !newSolution.SequenceEqual(_bestSolutionSoFar))
+            //    {
+            //        _bestSolutionSoFar = newSolution;
+            //        paint(algorithm);
+            //        break;
+            //    }
+            //    _bestSolutionSoFar = newSolution;
+            //}
+
+
+
+        }
+        private void paint(TravellingSalesmanAlgorithm algorithm)
+        {
             var bestSolutionSoFar = algorithm.GetBestSolutionSoFar().ToArray();
             List<LineModel> lines = new List<LineModel>();
             lines.Add(new LineModel() { pointStart = DataStatic.listShape[0].pointStart, pointEnd = new PointF(bestSolutionSoFar[0].X, bestSolutionSoFar[0].Y) });
             for (int i = 0; i < bestSolutionSoFar.Length - 1; i++)
             {
-                lines.Add(new LineModel() { pointStart = new PointF(bestSolutionSoFar[i].X, bestSolutionSoFar[i].Y), pointEnd = new PointF(bestSolutionSoFar[i+1].X, bestSolutionSoFar[i+1].Y) });
+                lines.Add(new LineModel() { pointStart = new PointF(bestSolutionSoFar[i].X, bestSolutionSoFar[i].Y), pointEnd = new PointF(bestSolutionSoFar[i + 1].X, bestSolutionSoFar[i + 1].Y) });
             }
-
+            DataStatic.listLine = lines;
+            ResetPaint();
         }
-
 
         //private void FormHoa_KeyDown(object sender, KeyEventArgs e)
         //{
@@ -327,7 +370,6 @@ namespace FullMin
         //    }
         //}
 
-
         private void rBt_clone_Click(object sender, EventArgs e)
         {
             if (retangleSelectService.CheckExitsAreaSelected())
@@ -337,7 +379,6 @@ namespace FullMin
                 ResetPaint();
             }
         }
-
 
     }
 }

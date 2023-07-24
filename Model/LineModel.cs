@@ -15,9 +15,10 @@ namespace FullMin.Model
         {
             using (GraphicsPath path = graphicsPath())
             {
-                using (Brush pen = new SolidBrush(color))
+                using (Pen pen = new Pen(color))
                 {
-                    graphics.FillPath(pen, path);
+                    //graphics.FillPath(pen, path);
+                    graphics.DrawPath(pen, path);
                 }
             }
         }

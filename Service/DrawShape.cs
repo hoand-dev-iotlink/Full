@@ -23,6 +23,10 @@ namespace FullMin.Service
                 //log.Log(shape.pointStart.X+","+ shape.pointStart.Y + ","+shape.color.Name);
                 shape.DrawingShape(graphics);
             }
+            foreach (var line in DataStatic.listLine)
+            {
+                line.DrawingShape(graphics);
+            }
         }
 
         public void RemoveShape(Shape shape)

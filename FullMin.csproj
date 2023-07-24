@@ -13,9 +13,11 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <SonarQubeTestProject>False</SonarQubeTestProject>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -43,6 +45,9 @@
     <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
       <HintPath>packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
     </Reference>
+    <Reference Include="Google.OrTools, Version=8.0.8283.0, Culture=neutral, PublicKeyToken=88b6f6dc7270e663, processorArchitecture=AMD64">
+      <HintPath>packages\Google.OrTools.8.0.8283\lib\net452\Google.OrTools.dll</HintPath>
+    </Reference>
     <Reference Include="HamiltonianGraph, Version=1.2.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\HamiltonianGraph.1.2.0\lib\net452\HamiltonianGraph.dll</HintPath>
     </Reference>
@@ -56,7 +61,20 @@
       <HintPath>packages\OpenTK.GLControl.3.3.3\lib\net20\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -91,6 +109,8 @@
     <Compile Include="Model\SelectItem.cs" />
     <Compile Include="Model\ShapeModel.cs" />
     <Compile Include="TravellingSalesman\Location.cs" />
+    <Compile Include="TravellingSalesman\MST.cs" />
+    <Compile Include="TravellingSalesman\OrTool.cs" />
     <Compile Include="TravellingSalesman\RandomProvider.cs" />
     <Compile Include="TravellingSalesman\TravellingSalesmanAlgorithm.cs" />
     <Compile Include="Program.cs" />
@@ -134,6 +154,7 @@
     <Compile Include="TestZoom.Designer.cs">
       <DependentUpon>TestZoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="TravellingSalesman\TSPNew.cs" />
     <EmbeddedResource Include="FormHoa.resx">
       <DependentUpon>FormHoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,7 +182,20 @@
     <EmbeddedResource Include="TestZoom.resx">
       <DependentUpon>TestZoom.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bop\bop_parameters.proto" />
+    <None Include="constraint_solver\assignment.proto" />
+    <None Include="constraint_solver\demon_profiler.proto" />
+    <None Include="constraint_solver\local_search_stats.proto" />
+    <None Include="constraint_solver\routing_enums.proto" />
+    <None Include="constraint_solver\routing_parameters.proto" />
+    <None Include="constraint_solver\search_limit.proto" />
+    <None Include="constraint_solver\solver_parameters.proto" />
+    <None Include="data\jobshop_scheduling.proto" />
+    <None Include="data\rcpsp.proto" />
+    <None Include="glop\parameters.proto" />
+    <None Include="graph\flow_problem.proto" />
     <None Include="image\2_.hiu" />
+    <None Include="linear_solver\linear_solver.proto" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -173,6 +207,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sat\boolean_problem.proto" />
+    <None Include="sat\cp_model.proto" />
+    <None Include="sat\sat_parameters.proto" />
+    <None Include="util\optional_boolean.proto" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -181,10 +219,18 @@
     <None Include="Animation\Annimation.json" />
     <Content Include="image\2_.bmp" />
     <Content Include="image\path_to_image.bmp" />
+    <Content Include="orLogo.png" />
     <Content Include="Service\log.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Animation\AnimationBackground\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Google.OrTools.runtime.win-x64.8.0.8283\build\net45\Google.OrTools.runtime.win-x64.targets" Condition="Exists('packages\Google.OrTools.runtime.win-x64.8.0.8283\build\net45\Google.OrTools.runtime.win-x64.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Google.OrTools.runtime.win-x64.8.0.8283\build\net45\Google.OrTools.runtime.win-x64.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Google.OrTools.runtime.win-x64.8.0.8283\build\net45\Google.OrTools.runtime.win-x64.targets'))" />
+  </Target>
 </Project>
